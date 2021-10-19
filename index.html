@@ -29,8 +29,16 @@
                 </ul>
             </nav>
             <ul class="auth-nav">
-                <li class="item"><a href="mailto:info@devstudio.com" class="link contacts">info@devstudio.com</a></li>
-                <li class="item"><a href="tel:+380961111111" class="link contacts">+38 096 111 11 11</a></li>
+                <li class="auth-nav-item">
+                    <a href="mailto:info@devstudio.com" class="link contacts auth-nav-item-link">
+                        <svg width="16px" height="12px" class="auth-nav-item-content">
+                        <use href="./images/icon.svg#icon-envelope"></use></svg>info@devstudio.com
+                    </a></li>
+                <li class="auth-nav-item">
+                    <a href="tel:+380961111111" class="link contacts auth-nav-item-link">
+                        <svg width="10px" height="16px" class="auth-nav-item-content">
+                        <use href="./images/icon.svg#icon-smartphone"></use>
+                </svg>+38 096 111 11 11</a></li>
             </ul>
         </div>
     </header>
@@ -38,10 +46,8 @@
     <main>
         <!-- Заказать услугу -->
         <section class="hero">
-            <!-- <div class="container"> -->
                 <h1 class="hero-title">Эффективные решения<br>для вашего бизнеса</h1>
                 <button type="button" class="button hero-button">Заказать услугу</button>
-            <!-- </div> -->
         </section>
 
         <!-- Преимущества -->
@@ -277,6 +283,59 @@
                     </ul>
                 </div>
         </section>
+
+        <!-- Regular customers -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Постоянные клиенты</h2>
+                <ul class="customers">
+                    <li class="customers-item">
+                        <button class="button customers-button-icon" type="button">
+                            <svg width="106px" height="60px" class="customers-item-icon">
+                                <use href="./images/icon.svg#icon-Logo-first"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="customers-item">
+                        <button class="button customers-button-icon" type="button">
+                            <svg width="106px" height="60px" class="customers-item-icon">
+                                <use href="./images/icon.svg#icon-Logo-second"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="customers-item">
+                        <button class="button customers-button-icon" type="button">
+                            <svg width="106px" height="60px" class="customers-item-icon">
+                                <use href="./images/icon.svg#icon-Logo-third"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="customers-item">
+                        <button class="button customers-button-icon" type="button">
+                            <svg width="106px" height="60px" class="customers-item-icon">
+                                <use href="./images/icon.svg#icon-Logo-forth"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="customers-item">
+                        <button class="button customers-button-icon" type="button">
+                            <svg width="106px" height="60px" class="customers-item-icon">
+                                <use href="./images/icon.svg#icon-Logo-fifth"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="customers-item">
+                        <button class="button customers-button-icon" type="button">
+                            <svg width="106px" height="60px" class="customers-item-icon">
+                                <use href="./images/icon.svg#icon-Logo-sixth"></use>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
     </main>
 
     <!-- Футер -->
