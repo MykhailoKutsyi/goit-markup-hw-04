@@ -92,33 +92,38 @@ body {
   text-decoration: none;
 }
 
+.site-nav:focus,
+.site-nav:hover {
+  color: var(--accent-color);
+}
 .auth-nav {
   display: flex;
   margin-left: auto;
   align-items: center;
 }
 
-.auth-nav-item-link {
+.auth-nav-link {
   display: flex;
   align-items: center;
   fill: #757575;
 }
 
-.auth-nav-item-link:hover,
-.auth-nav-item-content:focus {
+.auth-nav-link:hover,
+.auth-nav-link:focus {
+  color: var(--accent-color);
   fill: var(--accent-color);
 }
 
-.auth-nav-item-content {
+.auth-nav-icon {
   margin-right: 10px;
 }
 
-.link:hover,
+/* .link:hover,
 .link:focus {
   color: var(--accent-color);
-}
+} */
 
-.link.current {
+.current {
   color: var(--accent-color);
 }
 
@@ -232,13 +237,6 @@ body {
   text-align: center;
 }
 
-.benefits-icon {
-  width: 270px;
-  height: 120px;
-  padding: 25px 100px;
-  margin-bottom: 30px;
-}
-
 .benefits {
   display: flex;
 }
@@ -255,6 +253,15 @@ body {
 
 .benefits .benefits-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.benefits-icon {
+  width: 270px;
+  height: 120px;
+  padding: 25px 100px;
+  margin-bottom: 30px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
 }
 
 .work-section {
@@ -319,31 +326,28 @@ body {
   text-align: center;
 }
 
-.teammate-icons {
-  display: inline-block;
-  padding: 0 32px;
-  letter-spacing: 0em;
-  font-size: 0px;
-}
 .socials {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
-.socials-button-icon {
-  padding: 12px;
-  fill: #afb1b8;
-  border: none;
+
+.socials-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
+  fill: #afb1b8;
 }
 
-.socials-button-icon:focus,
-.socials-button-icon:hover {
+.socials-link:focus,
+.socials-link:hover {
   background-color: #2196f3;
   border-radius: 50%;
-  fill: #ffffff;
+  fill: var(--primary-white-color);
 }
 
-.socials:not(:last-child) {
+.socials-item:not(:last-child) {
   margin-right: 10px;
 }
 
@@ -352,25 +356,29 @@ body {
   display: flex;
 }
 
-.customers-item {
+.customer-item {
 }
 
-.customers-button-icon {
+.customer-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.customer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 170px;
   height: 92px;
   border: Solid 1px;
   border-color: #afb1b8;
   border-radius: 4px;
-  padding: 0;
+  fill: #afb1b8;
 }
 
-.customers-item:not(:last-child) {
-  margin-right: 30px;
-}
-
-.customers-item-icon {
-  /* background-color: tomato; */
-  /* padding: 7px 33px; */
+.customer-link:hover,
+.customer-link:focus {
+  border-color: #2196f3;
+  fill: #2196f3;
 }
 
 /* Portfolio */
@@ -435,23 +443,7 @@ body {
 .portfolio-gallery-item {
   /* calc((100% - кол-во маржинов в строке * значение маржина) / кол-во элементов в строке */
   width: calc((100% - 60px) / 3);
-}
-
-.portfolio-gallery-item:focus,
-.portfolio-gallery-item:hover {
-  border: solid 1px;
-  border-color: #eeeeee;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.gallery-decription {
-  padding: 20px 24px;
-  background-color: #ffffff;
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-color: #eeeeee;
+  /* display: flex; */
 }
 
 /* Для всех елементов-карточек в сетке добавить маржин справа, кроме каждого третего (так как в ряду - три елемента) */
@@ -464,6 +456,27 @@ body {
 
 .portfolio-gallery-item:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
+}
+
+.portfolio-gallery-link {
+  display: inline-block;
+  border: solid 1px;
+  border-color: #eeeeee;
+}
+
+.portfolio-gallery-link:hover,
+.portfolio-gallery-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.gallery-decription {
+  padding: 20px 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #eeeeee;
 }
 
 /* Footer */
@@ -505,14 +518,16 @@ body {
   text-decoration: none;
   font-style: normal;
 }
+
 .footer-container {
   display: flex;
+  align-items: baseline;
 }
+
 .footer-socials-form {
-  /* width: 206px; */
-  padding-top: 12px;
   margin-left: 70px;
 }
+
 .footer-socials-title {
   margin-top: 0px;
   margin-bottom: 20px;
@@ -522,27 +537,7 @@ body {
   text-transform: uppercase;
   color: var(--primary-white-color);
 }
-.footer-socials {
-  /* width: 206px; */
-  padding: 0px 0px;
-  margin: 0;
-  letter-spacing: 0;
-  font-size: 0;
-}
 
-.footer-socials-button-icon {
-  padding: 12px;
-  fill: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-}
-
-.footer-socials-button-icon:focus,
-.footer-socials-button-icon:hover {
-  background-color: #2196f3;
-  border-radius: 50%;
-  fill: #ffffff;
+.footer-socials-link {
+  fill: var(--primary-white-color);
 }
